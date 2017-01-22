@@ -1,0 +1,53 @@
+Answer Sources :: Code docs
+===========================
+
+Part of *|Nan.System.Sources|* (nan/system/sources.pl)
+
+We conform to SWI-Prolog Source Documentation Version 2 [*], except for
+argument _instantiation_ modes and relative meanings, as detailed in
+section *|Predicate documentation|*.
+
+[*] <http://www.swi-prolog.org/pldoc/package/pldoc.html>
+
+Predicate documentation
+-----------------------
+
+The header of the documentation of a predicate consists of one or more
+_templates_, each defining a specific way of calling the predicate:
+
+==
+<template>       ::= <head>['//'] 'is' <determinism> | <head>['//']
+<determinism>    ::= 'det' | 'semidet' | 'failure' | 'nondet' | 'multi'
+<head>           ::= <functor>'('<args>')' | <functor>
+<args>           ::= <argspec>',' <args> | <argspec>
+<argspec>        ::= [<instantiation>]<argname>[':'<type>]
+<instantiation>  ::= '+' | '-' | '?' | ':' | '@' | '!'
+<type>           ::= <term>
+==
+
+The meaning of the _determinism_ modes is:
+
+| *Determinism* | *Predicate behaviour* |
+| =det=     | Succeeds exactly once. |
+| =semidet= | Fails or succeeds exactly once. |
+| =failure= | Always fails. |
+| =nondet=  | Fails or succeeds one or more times. |
+| =multi=   | Succeeds one or more times. |
+
+The meaning of the argument _instantiation_ modes is:
+
+| *Instantiation* | *Direction* | *Argument requirements* |
+| =|+|= | Input argument  | Must satisfy _type_ at call time.  May be instantiated further. |
+| =|-|= | Output argument | Must be unbound at call time.  Will satisfy _type_ on exit. |
+| =|?|= | Output argument | As =|-|= but "steadfast".  (With =nonvar= argument, =det= becomes =semidet=, etc.) |
+| =|:|= | Input argument  | As =|+|= but treated as a meta-argument. |
+| =|@|= | Input argument  | As =|+|= but not instantiated further. |
+| =|!|= | Input argument  | As =|+|= but may be modified destructively. |
+
+*NOTE*: The result of calling a predicate with incorrectly instantiated
+arguments is _undefined_ and may include errors and unexpected behavior.
+
+@author		Julio P. Di Egidio
+@version	1.2.0-beta
+@copyright	2015-2017 Julio P. Di Egidio
+@license	GNU GPLv3

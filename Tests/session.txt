@@ -1,0 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+?- pack_install('<path>/nan_system_sources-1.2.0.zip').
+?- pack_install(nan_system_sources).
+
+?- use_module('../Code/sources').
+?- use_module('../prolog/nan/system/sources').
+?- use_module(library(nan/system/sources)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+?- test_all.	% Warm run
+% PL-Unit: sources_types:is_source ............ done
+% PL-Unit: sources_types:is_answer ..................... done
+% PL-Unit: sources_system:source_typ_sid .... done
+% PL-Unit: sources_system:source_new_sid ..... done
+% PL-Unit: sources_system:source_db .... done
+% PL-Unit: sources_system:source_catch .. done
+% PL-Unit: sources_system:source_throw . done
+% PL-Unit: sources_system:source_rethrow ....... done
+% PL-Unit: sources_system:source_has_err .. done
+% PL-Unit: sources:basic ....................... done
+% PL-Unit: sources:using .... done
+% All 85 tests passed
+% 24,695 inferences, 0.000 CPU in 0.050 seconds (0% CPU, Infinite Lips)
+true.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
