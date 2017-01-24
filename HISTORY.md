@@ -8,6 +8,10 @@ Licensed under GNU GPLv3.
 http://julio.diegidio.name/Projects/Nan.System.Sources/
 https://github.com/jp-diegidio/Nan.System.Sources-Prolog/
 
+Version <DEVELOPMENT>:
+----------------------
+- Minor code improvements.
+
 Version 1.2.0-beta:
 -------------------
 - Code restructured and cleaned up.
@@ -16,5 +20,5 @@ Version 1.2.0-beta:
 - **BREAKING**: Several breaking changes.
 
 Version "Preview":
------------------
+------------------
 - Baseline version "Preview".

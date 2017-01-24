@@ -375,14 +375,14 @@ source_create__abort(Sid, Res) :-
 
 source_destroy_all_ :-
 	bagof(Sid, Term^source_db_enum(Sid, Term), Sids),
-	foldl(source_destroy_all__do, Sids, [], Ress),
+	foldl(source_destroy_all__do, Sids, Ress, []),
 	source_rethrow(Ress).
 
-source_destroy_all__do(Sid, Ress0, Ress) :-
+source_destroy_all__do(Sid, [Res| RessT], RessT) :-
 	source_catch(
 	(	source_typ_sid(_, Typ, Sid),
 		source_destroy_(Typ, Sid)
-	), Res), append(Ress0, [Res], Ress).
+	), Res).
 
 %	source_destroy_ (+Typ, +Sid) is det
 

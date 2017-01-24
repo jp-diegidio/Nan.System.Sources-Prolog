@@ -22,7 +22,7 @@
 % PL-Unit: sources:basic ....................... done
 % PL-Unit: sources:using .... done
 % All 85 tests passed
-% 24,695 inferences, 0.000 CPU in 0.050 seconds (0% CPU, Infinite Lips)
+% 24,687 inferences, 0.000 CPU in 0.080 seconds (0% CPU, Infinite Lips)
 true.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

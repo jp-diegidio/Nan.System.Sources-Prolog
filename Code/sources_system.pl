@@ -79,7 +79,6 @@ For code docs syntax and meaning see sources_docs.txt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 :- use_module(library(debug)).
-:- use_module(library(lists)).
 :- use_module(library(apply)).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,17 +262,17 @@ source_throw(EMsg) :-
 %	@arg  Ress  The list of goal results.
 
 source_rethrow(Ress) :-
-	foldl(source_rethrow__err, Ress, [], Errs),
+	foldl(source_rethrow__err, Ress, Errs, []),
 	(	Errs = []    -> true
 	;	Errs = [Err] -> throw(Err)
 	;	source_throw(many_errors(Errs))
 	).
 
-source_rethrow__err(Res, Errs0, Errs) :-
+source_rethrow__err(Res, Errs, ErrsT) :-
 	source_err__res(Res, HasErr, Err),
 	(	HasErr == true
-	->	append(Errs0, [Err], Errs)
-	;	Errs = Errs0
+	->	Errs = [Err| ErrsT]
+	;	Errs = ErrsT
 	).
 
 %!	source_has_err(+Res) is semidet.
