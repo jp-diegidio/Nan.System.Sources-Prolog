@@ -1,16 +1,16 @@
 # Answer Sources in Prolog
 
-Nan.System.Sources
-Nan.System.Sources/Prolog 1.2.0-beta
-Answer Sources in Prolog
-Copyright 2015-2017 Julio P. Di Egidio
-Licensed under GNU GPLv3.
-http://julio.diegidio.name/Projects/Nan.System.Sources/
-https://github.com/jp-diegidio/Nan.System.Sources-Prolog/
+Nan.System.Sources  
+Nan.System.Sources/Prolog 1.2.0-beta  
+Answer Sources in Prolog  
+Copyright 2015-2017 Julio P. Di Egidio  
+Licensed under GNU GPLv3.  
+http://julio.diegidio.name/Projects/Nan.System.Sources/  
+https://github.com/jp-diegidio/Nan.System.Sources-Prolog/  
 
-**This library implements Answer Sources in Prolog.**
-*This is an open and free project.*
-Source code available and pull requests accepted.
+**This library implements Answer Sources in Prolog.**  
+*This is an open and free project.*  
+Source code available and pull requests accepted.  
 
   1. What are answer sources
   2. How to use this library
@@ -48,22 +48,22 @@ A flow diagram for the `yield` operation (denoted `return` in the diagram)
 was later presented here [4].
 
 [1] P. Tarau, "Fluents: A Refactoring of Prolog for Uniform Reflection
-and Interoperation with External Objects":
-<http://www.cse.unt.edu/~tarau/research/LeanProlog/RefactoringPrologWithFluents.pdf>
-[2] P. Tarau, A. Majumdar, "Interoperating Logic Engines":
-<http://www.cse.unt.edu/~tarau/research/LeanProlog/InteroperatingLogicEngines.pdf>
-[3] J.P. Di Egidio, "Answer Sources in Prolog (SWI) - Preview":
-<http://seprogrammo.blogspot.it/2015/09/answer-sources-in-prolog-swi-preview.html>
-[4] J.P. Di Egidio, "Answer Sources: from Fluents to Interactors":
-<http://seprogrammo.blogspot.co.uk/2015/09/answer-sources-from-fluents-to.html>
+and Interoperation with External Objects":  
+<http://www.cse.unt.edu/~tarau/research/LeanProlog/RefactoringPrologWithFluents.pdf>  
+[2] P. Tarau, A. Majumdar, "Interoperating Logic Engines":  
+<http://www.cse.unt.edu/~tarau/research/LeanProlog/InteroperatingLogicEngines.pdf>  
+[3] J.P. Di Egidio, "Answer Sources in Prolog (SWI) - Preview":  
+<http://seprogrammo.blogspot.it/2015/09/answer-sources-in-prolog-swi-preview.html>  
+[4] J.P. Di Egidio, "Answer Sources: from Fluents to Interactors":  
+<http://seprogrammo.blogspot.co.uk/2015/09/answer-sources-from-fluents-to.html>  
 
 ## 2. How to use this library
 
 This library comprises the following modules:
 
-  - `sources` (nan/system/sources.pl)
+  - `sources` (nan/system/sources.pl)  
     Provides the predicates that implement Answer Sources in Prolog.
-  - `sources_types` (nan/system/sources_types.pl)
+  - `sources_types` (nan/system/sources_types.pl)  
     Provides type testing predicates to validate arguments in user code.
 
 For detailed documentation on the available modules and predicates, please
