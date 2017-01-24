@@ -302,7 +302,7 @@ source_err__res(Res, HasErr, Err) :-
 %	
 %	@arg  Sid  The source internal sid.
 %	@arg  Cat  The caller's category.
-%	@arg  Act  The caller's action (one of =start= or =end=).
+%	@arg  Act  The caller's action (one of =begin= or =end=).
 
 source_log_call(Sid, Cat, Act) :-
 	(	debugging(sources)
@@ -310,7 +310,7 @@ source_log_call(Sid, Cat, Act) :-
 	;	true
 	).
 
-source_log_call__do(start, Sid, Cat) :- !,
+source_log_call__do(begin, Sid, Cat) :- !,
 	source_log__do(Sid, Cat, 'Started...', []).
 source_log_call__do(end, Sid, Cat) :- !,
 	source_log__do(Sid, Cat, 'Done.', []).

@@ -514,8 +514,8 @@ source_next__t0_e(Sid, Cat, Pid, Ans) :-
 	(	\+ callable(Msg)  ->
 			source_throw(invalid_message(Sid, Cat, Msg))
 	;	Msg = fail        -> Ans = answer(fail, no)
-	;	Msg = last(Sol)  -> Ans = answer(last, the(Sol))
-	;	Msg = more(Sol)  -> Ans = answer(more, the(Sol))
+	;	Msg = last(Sol)   -> Ans = answer(last, the(Sol))
+	;	Msg = more(Sol)   -> Ans = answer(more, the(Sol))
 	;	Msg = except(Err) ->
 			source_throw(error_message(Sid, Cat, Err))
 	;	source_throw(unknown_message(Sid, Cat, Msg))
@@ -596,7 +596,7 @@ source_exec__recv(Sid, Tid, Loop0, Loop1) :-
 
 source_call_(Sid, Cat, GAct) :-
 	setup_call_cleanup(
-		source_log_call(Sid, Cat, start),
+		source_log_call(Sid, Cat, begin),
 		call(GAct),
 		source_log_call(Sid, Cat, end)
 	).
